@@ -10,7 +10,7 @@ import java.util.logging.Logger;
  *
  * Here the stub demonstrating how <code>FunctionJobControl</code> should be used:
  * <pre>
- * public void function(functionArgumnts, FunctionJobControl control) throws JobControlException
+ * public void function(functionArguments, FunctionJobControl control) throws JobControlException
  * {
  *      try
  *      {
