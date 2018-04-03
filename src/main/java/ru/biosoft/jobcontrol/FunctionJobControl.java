@@ -38,8 +38,6 @@ import java.util.logging.Logger;
 */
 public class FunctionJobControl extends AbstractJobControl
 {
-    protected static final Logger log = Logger.getLogger(FunctionJobControl.class.getName());
-
     /**
      * Constructs FunctionJobControl.
      *
