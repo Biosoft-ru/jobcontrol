@@ -107,7 +107,7 @@ abstract public class AbstractJobControl implements JobControl
     public void exceptionOccured(JobControlException ex)
     {
         if( log != null )
-            log.log(Level.FINE, "exceptionOccured() ", ex);
+            log.log(Level.FINE, "exceptionOccurred() ", ex);
 
         runStatus = ex.getStatus();
     }
