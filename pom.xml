@@ -4,12 +4,26 @@
  
  <groupId>ru.biosoft</groupId>
  <artifactId>jobcontrol</artifactId>
- <version>2.0.0</version>
+ <version>2.0.0-SNAPSHOT</version>
  <packaging>jar</packaging>
 
  <name>Job control</name>
  <description>Allows to control time consuming operations</description>
 
+ <distributionManagement>
+  <repository>
+   <uniqueVersion>false</uniqueVersion>
+   <id>dote</id>
+   <name>DOTE Repository</name>
+   <url>http://nexus.dote.ru/nexus/content/repositories/releases/</url>
+  </repository>
+  <snapshotRepository>
+   <uniqueVersion>true</uniqueVersion>
+   <id>dote-snapshots</id>
+   <name>DOTE Snapshots</name>
+   <url>http://nexus.dote.ru/nexus/content/repositories/snapshots/</url>
+  </snapshotRepository>
+ </distributionManagement>
 
  <properties>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,7 +36,7 @@
    <groupId>junit</groupId>
    <artifactId>junit</artifactId>
    <version>4.12</version>
-   <scope>compile</scope>
+   <scope>test</scope>
   </dependency>
  </dependencies>
 
