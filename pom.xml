@@ -4,41 +4,17 @@
  
  <groupId>ru.biosoft</groupId>
  <artifactId>jobcontrol</artifactId>
- <version>2.0.0-SNAPSHOT</version>
+ <version>1.0.0</version>
  <packaging>jar</packaging>
 
  <name>Job control</name>
  <description>Allows to control time consuming operations</description>
 
- <distributionManagement>
-  <repository>
-   <uniqueVersion>false</uniqueVersion>
-   <id>dote</id>
-   <name>DOTE Repository</name>
-   <url>http://nexus.dote.ru/nexus/content/repositories/releases/</url>
-  </repository>
-  <snapshotRepository>
-   <uniqueVersion>true</uniqueVersion>
-   <id>dote-snapshots</id>
-   <name>DOTE Snapshots</name>
-   <url>http://nexus.dote.ru/nexus/content/repositories/snapshots/</url>
-  </snapshotRepository>
- </distributionManagement>
-
- <properties>
-  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  <java.version>1.8</java.version>
-  <maven-compiler-plugin.version>3.6.1</maven-compiler-plugin.version>
- </properties>
-
- <dependencies>
-  <dependency>
-   <groupId>junit</groupId>
-   <artifactId>junit</artifactId>
-   <version>4.12</version>
-   <scope>test</scope>
-  </dependency>
- </dependencies>
+ <parent>
+  <groupId>ru.biosoft</groupId>
+  <artifactId>pom</artifactId>
+  <version>1.0.0</version>
+ </parent>
 
  <build>
   <plugins>
@@ -46,96 +22,29 @@
    <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-compiler-plugin</artifactId>
-    <version>3.7.0</version>
-    <configuration>
-     <source>1.7</source>
-     <target>1.7</target>
-     <compilerArgs>
-      <arg>-Xlint:all</arg>
-     </compilerArgs>
-    </configuration>
    </plugin>
 
    <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-javadoc-plugin</artifactId>
-    <version>2.10.3</version>
-    <executions>
-     <execution>
-      <id>attach-javadocs</id>
-      <goals>
-       <goal>jar</goal>
-      </goals>
-      <configuration>
-       <quiet>true</quiet>
-       <tags>
-         <tag>
-           <name>todo</name>
-           <!-- todo tag for all places -->
-           <placement>a</placement>
-           <head>TODO:</head>
-         </tag>
-       </tags>
-      </configuration>
-     </execution>
-    </executions>
    </plugin>
    
    <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-source-plugin</artifactId>
-    <version>2.4</version>
-    <executions>
-     <execution>
-      <id>attach-sources</id>
-      <goals>
-       <goal>jar-no-fork</goal>
-      </goals>
-     </execution>
-    </executions>
    </plugin>
     
     <plugin>
     <groupId>org.apache.felix</groupId>
     <artifactId>maven-bundle-plugin</artifactId>
-    <version>3.3.0</version>
-    <extensions>true</extensions>
-    <executions>
-     <execution>
-      <id>bundle-manifest</id>
-      <phase>process-classes</phase>
-      <goals>
-       <goal>manifest</goal>
-      </goals>
-     </execution>
-    </executions>
    </plugin>
    
    <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-jar-plugin</artifactId>
-    <version>3.0.2</version>
-    <configuration>
-     <archive>
-      <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-     </archive>
-    </configuration>
-   </plugin> 
-  </plugins>
+   </plugin>
 
-  <pluginManagement>
-   <plugins>
-    <plugin>
-     <groupId>org.apache.maven.plugins</groupId>
-     <artifactId>maven-compiler-plugin</artifactId>
-     <version>${maven-compiler-plugin.version}</version>
-    </plugin>
-    <plugin>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>2.6</version>
-    </plugin>
-   </plugins>
-  </pluginManagement>
+  </plugins>
 
  </build>
 </project>
